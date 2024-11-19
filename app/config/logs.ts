@@ -2,7 +2,7 @@ import { join } from "node:path";
 import type { LoggerInterface } from "@hefestos/core";
 
 const LogsConfig: LoggerInterface = {
-  active: true,
+  active: false,
   format: "combined",
   customFormat: "",
   rotate: {
