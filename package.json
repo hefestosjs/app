@@ -1,11 +1,40 @@
 {
   "name": "app",
-  "module": "index.ts",
+  "module": "start/server.ts",
+  "main": "start/server.ts",
   "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "bun start/run.ts start",
+    "ms": "bun start/run.ts ms",
+    "g": "bun start/run.ts generate",
+    "module": "bun start/run.ts module",
+    "studio": "bun start/run.ts studio",
+    "seed": "bun start/run.ts seed"
+  },
+  "dependencies": {
+    "@hefestos/core": "^1.0.2",
+    "@prisma/client": "^5.21.1",
+    "uuid": "^11.0.3",
+    "zod": "^3.23.8"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@biomejs/biome": "1.9.4",
+    "@types/bun": "latest",
+    "nodemon": "^3.1.7",
+    "prisma": "^5.21.1"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "prisma": {
+    "schema": "app/database/schema.prisma",
+    "seed": "bun run app/database/seeds/index.ts"
+  },
+  "nodemonConfig": {
+    "watch": ["."],
+    "ext": "*",
+    "ignore": ["node_modules", "logs"],
+    "exec": "bun start/server.ts"
   }
 }
