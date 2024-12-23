@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@hefestos/core": "^1.1.5",
-    "@prisma/client": "^5.21.1",
+    "@prisma/client": "^6.1.0",
     "uuid": "^11.0.3",
     "zod": "^3.23.8"
   },
